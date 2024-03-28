@@ -1,0 +1,21 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.imgCard {
+    width: 100%;
+    height: auto;
+    display: block;
+}

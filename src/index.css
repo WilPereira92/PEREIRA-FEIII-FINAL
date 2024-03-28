@@ -25,9 +25,9 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+  width: 94%;
+  justify-content: space-between;
+  padding: 1rem 3rem;
 }
 
 a{
@@ -44,12 +44,11 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
   position: relative;
   bottom: 0;
   width: 90%;
   height: 40px;
-  margin-top: 2rem;
 }
 
 footer > img{
@@ -119,4 +118,8 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+main {
+  width: 100%;
 }
