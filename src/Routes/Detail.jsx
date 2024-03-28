@@ -11,7 +11,7 @@ const Detail = () => {
   const params = useParams();
   const url = `https://jsonplaceholder.typicode.com/users/${params.id}`
   const {dispatch, state} = useContextGlobal();
-  const {doctorSelected} = state;
+  const {doctorSelected, theme} = state;
   useEffect(() => {
     axios(url)
     .then((response) => {
@@ -19,7 +19,7 @@ const Detail = () => {
     })
   }, [])
   return (
-    <div className={DetailStyles.mainContainer}>
+    <div className={`${DetailStyles.mainContainer} ${theme ? 'dark' : ''}`}>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
       <Card key={doctorSelected.id}>

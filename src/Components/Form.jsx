@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useContextGlobal } from "./utils/global.context";
 
 
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
+  const {state} = useContextGlobal();
+  const {theme} = state;
   const [showForm, setShowForm] = useState(true);
   const [inputsForm, setInputsForm] = useState({
     nombre: '',
@@ -53,7 +56,7 @@ const Form = () => {
 
   }
   return (
-    <div>
+    <div className={theme ? 'dark' : ''}>
       {showForm ? <form>
         <input type="text" name="" id="" placeholder="Nombre" onChange={(event) => setInputsForm({...inputsForm, nombre: event.target.value})}/>
         <input type="text" name="" id="" placeholder="Apellido" onChange={(event) => setInputsForm({...inputsForm, apellido: event.target.value})}/>

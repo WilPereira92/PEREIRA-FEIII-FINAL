@@ -5,9 +5,9 @@ import FavsStyles from "../Styles/Routes/Favs.module.css"
 
 const Favs = () => {
   const {state} = useContextGlobal();
-  const {favs} = state;
+  const {favs, theme} = state;
   return (
-    <div className={FavsStyles.mainContainer}>
+    <div className={`${FavsStyles.mainContainer} ${theme ? 'dark' : ''}`}>
       <h1>Dentists Favs</h1>
       {favs.length == 0 && <h3>No hay dentistas en favoritos</h3>}
       <div className="card-grid">
