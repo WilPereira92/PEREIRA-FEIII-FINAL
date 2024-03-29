@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "../Reducers/reducer";
 import axios from "axios";
-const initialState = {theme: false, data: [], favs: [], doctorSelected: {}}
+const initialState = {theme: false, data: [], favs: JSON.parse(localStorage.getItem('favs')) || [], doctorSelected: {}}
 
 const ContextGlobal = createContext();
 

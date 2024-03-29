@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import { useContextGlobal } from "./utils/global.context";
 
 
 const Card = ({ children, item }) => {
   const {dispatch, state} = useContextGlobal();
-  const{doctorSelected} = state;
+  const{doctorSelected, favs} = state;
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
     let datos = ``;
@@ -17,7 +18,10 @@ const Card = ({ children, item }) => {
     
     alert(datos);
   }
-
+  useEffect(() => {
+    localStorage.setItem('favs', JSON.stringify(favs))
+  }, [state.favs])
+  
   return (
     <div className="card">
         {/* En cada card deberan mostrar en name - username y el id */}
