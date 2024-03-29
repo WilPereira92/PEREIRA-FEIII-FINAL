@@ -19,7 +19,7 @@ const Card = ({ children, item }) => {
     alert(datos);
   }
   useEffect(() => {
-    localStorage.setItem('favs', JSON.stringify(favs))
+    localStorage.setItem('favs', JSON.stringify(favs));
   }, [state.favs])
   
   return (
